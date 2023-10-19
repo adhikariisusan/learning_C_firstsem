@@ -1,0 +1,56 @@
+//WAP to check weathe the given matrix of mxn size is an identity matrix or not
+#include<stdio.h>
+ int main()
+    {
+        int a[100][100],flag=0;
+        printf("Enter the number of 1 rows:\n");
+        int m;
+        scanf("%d",&m);
+        printf("\nEnter the number of 1 columns:\n");
+        int n;
+        scanf("%d",&n);
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                printf("\na[%d][%d]\n",i+1,j+1);
+                scanf("%d",&a[i][j]);
+            }
+        }
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i==j)
+                {
+                    if(a[i][j]!=1)
+                        flag=1;
+
+
+                }
+                else if(i!=j)
+                {
+                    if(a[i][j]!=0)
+                        flag=1;
+                }
+                }
+            }
+            printf("\nYour Inputted Matrix is :");
+            for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                printf("%d\t",a[i][j]);
+            }
+            printf("\n");
+        }
+
+            if(flag==0)
+                printf("The matrix is  identity matrix");
+            else
+                printf("The matrix is not identity matrix");
+
+
+
+        return 0;
+        }
